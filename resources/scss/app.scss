@@ -1,0 +1,51 @@
+$white: #FFF;
+$gray: #F1F2F8;
+$black: #202020;
+$purple: #6C00FF;
+
+body {
+    color: $black;
+}
+
+.template-container {
+    display: flex;
+    background-color: $gray;
+    .sidebar {
+        background-color: $white;
+        width: 20%;
+        height: 100vh;
+        .logo {
+            text-align: center;
+            font-size: larger;
+            margin: 80px 0;
+        }
+        nav {
+            .nav-ul {
+                .nav-item {
+                    margin: 0 0 40px 30px;
+                    display: flex;
+                    i {
+                        text-align: left;
+                        width: 15%;
+                        margin-right: 8px;
+                    }
+                    a {
+                        text-align: left;
+                        flex-grow: 1;
+                    }
+                    &:hover {
+                        color: $purple;
+                        transition: 0.3s;
+                    }
+                }
+                .active {
+                    color: $purple;
+                }
+            }
+        }
+    }
+    .main-container {
+        margin: 3%;
+        flex-grow: 1;
+    }
+}
