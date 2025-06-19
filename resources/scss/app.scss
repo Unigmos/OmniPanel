@@ -1,7 +1,10 @@
 $white: #FFF;
 $gray: #F1F2F8;
 $black: #202020;
+$font-gray: #686D8B;
 $purple: #6C00FF;
+$yellow: #F4BC14;
+$orange: #FF7A49;
 
 body {
     color: $black;
@@ -16,7 +19,7 @@ body {
         height: 100vh;
         .logo {
             text-align: center;
-            font-size: larger;
+            font-size: 1.5rem;
             margin: 80px 0;
         }
         nav {
@@ -24,6 +27,8 @@ body {
                 .nav-item {
                     margin: 0 0 40px 30px;
                     display: flex;
+                    color: $font-gray;
+                    font-size: 1.25rem;
                     i {
                         text-align: left;
                         width: 15%;
@@ -47,5 +52,157 @@ body {
     .main-container {
         margin: 3%;
         flex-grow: 1;
+        .title {
+            color: $font-gray;
+            font-weight: bold;
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        .versatility-box {
+            color: $font-gray;
+            background-color: $white;
+            padding: 20px;
+            border-radius: 10px;
+            .versatility-title {
+                font-size: 2rem;
+                font-weight: bolder;
+                margin-bottom: 20px;
+            }
+            .versatility-sub-box {
+                margin: 3%;
+                .versatility-sub-title {
+                    font-size: 1.5rem;
+                    font-weight: bolder;
+                }
+                .versatility-sub-text {
+                    border-bottom: 3px solid $font-gray;
+                    p {
+                        word-break: break-all;
+                        min-height: 1rem;
+                    }
+                }
+                .versatility-sub-input {
+                    width: 100%;
+                }
+            }
+            p {
+                font-weight: bold;
+                font-size: 1.25rem;
+            }
+        }
+        .flex-hub {
+            flex: 1 1 250px;
+            max-width: 400px;
+        }
+        .flex-curtain{
+            flex: 1 1 250px;
+            max-width: 300px;
+        }
+    }
+}
+
+// 色設定
+.purple {
+    color: $purple;
+}
+.orange {
+    color: $orange;
+}
+.yellow {
+    color: $yellow;
+}
+
+// 汎用スタイル
+.bold-font {
+    font-weight: bold;
+}
+
+.margin-left-middle {
+    margin-left: 20px;
+}
+
+.margin-bottom-middle {
+    margin-bottom: 20px;
+}
+
+.center-element {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.flex-box {
+    display: flex;
+}
+
+.space-between {
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+// 汎用パーツ
+.pie-chart-box {
+    .pie-chart-wrapper {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        max-width: 100px;
+        .pie-chart {
+            width: 100%;
+            height: 100%;
+            display: block;
+            .bg {
+                stroke: $gray;
+                stroke-width: 10;
+                fill: none;
+            }
+            .value {
+                stroke-width: 10;
+                fill: none;
+                stroke-linecap: round;
+                transition: stroke-dashoffset 0.5s;
+            }
+            text {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-anchor: middle;
+                dominant-baseline: middle;
+                user-select: none;
+                pointer-events: none;
+            }
+            .stroke-purple {
+                stroke: $purple;
+            }
+            .fill-purple {
+                fill: $purple;
+            }
+            .stroke-yellow {
+                stroke: $yellow;
+            }
+            .fill-yellow {
+                fill: $yellow;
+            }
+            .stroke-orange {
+                stroke: $orange;
+            }
+            .fill-orange {
+                fill: $orange;
+            }
+        }
+    }
+    .pie-chart-title {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-top: 10px;
     }
 }
