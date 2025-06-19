@@ -5,7 +5,10 @@
     </div>
 
     <div class="flex-container">
-        @if(!empty($hubStatus))
+        {{-- 未登録(初回表示時)は表示しない --}}
+        @if (!isset($registrationArray))
+        {{-- 正常取得時 --}}
+        @elseif(!empty($hubStatus))
             <div class="versatility-box flex-hub">
                 <div class="versatility-title">
                     <h2>{{ $hubStatus['deviceType'] ?? null }}</h2>
@@ -49,8 +52,6 @@
                     />
                 </div>
             </div>
-        {{-- 未登録(初回表示時)は表示しない --}}
-        @elseif (!isset($registrationArray))
         {{-- 登録はあるが、データ取得ができない場合 --}}
         @elseif ($registrationArray['switchbot_hub_id'] && empty($hubStatus))
             <div class="versatility-box">
@@ -58,7 +59,10 @@
             </div>
         @endif
 
-        @if (!empty($curtainStatus))
+        {{-- 未登録(初回表示時)は表示しない --}}
+        @if (!isset($registrationArray))
+        {{-- 正常取得時 --}}
+        @elseif (!empty($curtainStatus))
             <div class="versatility-box flex-curtain">
                 <div class="versatility-title">
                     <h2>カーテン</h2>
@@ -85,8 +89,6 @@
                     />
                 </div>
             </div>
-        {{-- 未登録(初回表示時)は表示しない --}}
-        @elseif (!isset($registrationArray))
         {{-- 登録はあるが、データ取得ができない場合 --}}
         @elseif ($registrationArray['switchbot_curtain_id'] && empty($curtainStatus))
             <div class="versatility-box">
