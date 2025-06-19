@@ -49,6 +49,9 @@
                     />
                 </div>
             </div>
+        {{-- 未登録(初回表示時)は表示しない --}}
+        @elseif (!isset($registrationArray))
+        {{-- 登録はあるが、データ取得ができない場合 --}}
         @elseif ($registrationArray['switchbot_hub_id'] && empty($hubStatus))
             <div class="versatility-box">
                 <p>SwitchBot(Hub)からデータを取得できませんでした。</p>
@@ -82,6 +85,9 @@
                     />
                 </div>
             </div>
+        {{-- 未登録(初回表示時)は表示しない --}}
+        @elseif (!isset($registrationArray))
+        {{-- 登録はあるが、データ取得ができない場合 --}}
         @elseif ($registrationArray['switchbot_curtain_id'] && empty($curtainStatus))
             <div class="versatility-box">
                 <p>SwitchBot(カーテン)からデータを取得できませんでした。</p>
