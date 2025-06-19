@@ -31,6 +31,12 @@
                                 Dashboard
                             </a>
                         </li>
+                        <li class="nav-item {{ request()->routeIs('setting.index') || request()->routeIs('setting.edit') ? 'active' : ''}}">
+                            <a class="nav-link" href="{{ route('setting.index') }}">
+                                <i class="las la-cog"></i>
+                                Setting
+                            </a>
+                        </li>
                         <form method="POST" action="{{ route('logout') }}" class="nav-item">
                             @csrf
                             <a href="route('logout')" onclick="event.preventDefault();this.closest('form').submit();">
