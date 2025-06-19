@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a349383c5500fe749471b3bfb83df832",
+    "content-hash": "4d0574caf931feb8dbc36499647ffe4b",
     "packages": [
         {
             "name": "brick/math",
@@ -3167,6 +3167,69 @@
                 }
             ],
             "time": "2024-04-27T21:32:50+00:00"
+        },
+        {
+            "name": "revolution/laravel-switchbot",
+            "version": "1.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/invokable/laravel-switchbot.git",
+                "reference": "c7c684c6c88cea7e9f03546ab56a3027ed3f964d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/invokable/laravel-switchbot/zipball/c7c684c6c88cea7e9f03546ab56a3027ed3f964d",
+                "reference": "c7c684c6c88cea7e9f03546ab56a3027ed3f964d",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^7.5",
+                "illuminate/support": "^10.0||^11.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^8.0",
+                "phpunit/phpunit": "^9.5"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Revolution\\SwitchBot\\SwitchBotServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Revolution\\SwitchBot\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "kawax",
+                    "email": "kawaxbiz@gmail.com"
+                }
+            ],
+            "description": "SwitchBot API for Laravel",
+            "keywords": [
+                "SwitchBot",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/invokable/laravel-switchbot/issues",
+                "source": "https://github.com/invokable/laravel-switchbot/tree/1.2.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/invokable",
+                    "type": "github"
+                }
+            ],
+            "time": "2024-02-20T04:53:03+00:00"
         },
         {
             "name": "symfony/console",
