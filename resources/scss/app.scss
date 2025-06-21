@@ -16,6 +16,7 @@ body {
     .sidebar {
         background-color: $white;
         width: 20%;
+        flex-shrink: 0;
         height: 100vh;
         .logo {
             text-align: center;
@@ -28,7 +29,7 @@ body {
                     margin: 0 0 40px 30px;
                     display: flex;
                     color: $font-gray;
-                    font-size: 1.25rem;
+                    font-size: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
                     i {
                         text-align: left;
                         width: 15%;
@@ -52,10 +53,12 @@ body {
     .main-container {
         margin: 3%;
         flex-grow: 1;
+        display: flex;
+        flex-direction: column;
         .title {
             color: $font-gray;
             font-weight: bold;
-            font-size: 3rem;
+            font-size: clamp(2rem, 1.636rem + 1.82vw, 3rem);
             margin-bottom: 20px;
         }
         .versatility-box {
@@ -64,14 +67,14 @@ body {
             padding: 20px;
             border-radius: 10px;
             .versatility-title {
-                font-size: 2rem;
+                font-size: clamp(1.25rem, 0.977rem + 1.36vw, 2rem);
                 font-weight: bolder;
                 margin-bottom: 20px;
             }
             .versatility-sub-box {
                 margin: 3%;
                 .versatility-sub-title {
-                    font-size: 1.5rem;
+                    font-size: clamp(1rem, 0.818rem + 0.91vw, 1.5rem);
                     font-weight: bolder;
                 }
                 .versatility-sub-text {
@@ -87,7 +90,7 @@ body {
             }
             p {
                 font-weight: bold;
-                font-size: 1.25rem;
+                font-size: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
             }
         }
         .flex-hub {
@@ -150,6 +153,10 @@ body {
     gap: 16px;
 }
 
+.fill-remaining {
+    flex-grow: 1;
+}
+
 // 汎用パーツ
 .pie-chart-box {
     .pie-chart-wrapper {
@@ -172,7 +179,7 @@ body {
                 transition: stroke-dashoffset 0.5s;
             }
             text {
-                font-size: 1.5rem;
+                font-size: 1.25rem;
                 font-weight: bold;
                 text-anchor: middle;
                 dominant-baseline: middle;
@@ -204,5 +211,19 @@ body {
         font-size: 1.25rem;
         font-weight: bold;
         margin-top: 10px;
+    }
+}
+
+.navigate-setting {
+    color: $font-gray;
+    font-size: clamp(1.25rem, 1.159rem + 0.45vw, 1.5rem);
+    font-weight: bold;
+    padding: 20px;
+    background-color: $white;
+    border-radius: 9999px;
+    transition: 0.3s;
+    &:hover {
+        color: $white;
+        background-color: $font-gray;
     }
 }
