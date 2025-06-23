@@ -13,7 +13,7 @@
             </a>
         </div>
     @else
-        <div class="flex-container">
+        <div class="content-container">
             {{-- 正常取得時 --}}
             @if(!empty($hubStatus))
                 <div class="versatility-box flex-hub">
