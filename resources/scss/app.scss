@@ -5,6 +5,7 @@ $font-gray: #686D8B;
 $purple: #6C00FF;
 $yellow: #F4BC14;
 $orange: #FF7A49;
+$overlay: rgba(0, 0, 0, 0.4);
 
 body {
     color: $black;
@@ -13,15 +14,20 @@ body {
 .template-container {
     display: flex;
     background-color: $gray;
+    height: 100vh;
     .sidebar {
         background-color: $white;
         width: 20%;
         flex-shrink: 0;
-        height: 100vh;
-        .logo {
-            text-align: center;
-            font-size: 1.5rem;
-            margin: 80px 0;
+        .sidebar-logo-box {
+            margin: 80px 5%;
+            .sidebar-logo {
+                margin: 0 auto;
+                max-width: 300px;
+                img {
+                    object-fit: fill;
+                }
+            }
         }
         nav {
             .nav-ul {
@@ -93,14 +99,6 @@ body {
                 font-size: clamp(0.75rem, 0.568rem + 0.91vw, 1.25rem);
             }
         }
-        .flex-hub {
-            flex: 1 1 250px;
-            max-width: 400px;
-        }
-        .flex-curtain{
-            flex: 1 1 250px;
-            max-width: 300px;
-        }
     }
 }
 
@@ -145,12 +143,6 @@ body {
 .space-between {
     justify-content: space-between;
     gap: 15px;
-}
-
-.flex-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 16px;
 }
 
 .fill-remaining {
@@ -214,6 +206,7 @@ body {
     }
 }
 
+// 新規作成ボタン
 .navigate-setting {
     color: $font-gray;
     font-size: clamp(1.25rem, 1.159rem + 0.45vw, 1.5rem);
@@ -225,5 +218,120 @@ body {
     &:hover {
         color: $white;
         background-color: $font-gray;
+    }
+}
+
+// PCレイアウト
+@media (min-width: 769px) {
+    .sidebar {
+        display: block;
+    }
+    .hamburger-menu {
+        display: none;
+    }
+    .content-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+    .flex-hub {
+        flex: 1 1 250px;
+        max-width: 400px;
+    }
+    .flex-curtain{
+        flex: 1 1 250px;
+        max-width: 300px;
+    }
+}
+
+// スマホレイアウト
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    .hamburger-menu {
+        display: flex;
+        background-color: $white;
+        position: relative;
+        height: 6vh;
+        .hamburger-icon {
+            margin: 5px auto;
+            img {
+                max-height: 100%;
+            }
+        }
+        .hamburger-button {
+            height: 100%;
+            font-size: 2rem;
+        }
+    }
+    .template-container {
+        flex-direction: column;
+        .main-container {
+            display: flex;
+        }
+    }
+    .content-container {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        .flex-hub {
+            max-width: 100%;
+        }
+        .flex-curtain{
+            max-width: 100%;
+        }
+    }
+}
+
+// ハンバーガーメニュー押下で表示するメニュー
+.slide-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    background: $white;
+    color: $font-gray;
+    transform: translateY(-100%);
+    transition: transform 0.4s cubic-bezier(.4,0,.2,1);
+    z-index: 9999;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    &.open {
+        transform: translateY(0);
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        text-align: center;
+        li {
+            transition: 0.2s;
+            a {
+                display: block;
+                padding: 16px 0;
+                text-decoration: none;
+                font-size: 1.2rem;
+            }
+            &:hover {
+                background-color: $purple;
+                color: $white;
+            }
+        }
+    }
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $overlay;
+    z-index: 9998;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
     }
 }
