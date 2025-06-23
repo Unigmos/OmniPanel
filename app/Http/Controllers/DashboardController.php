@@ -26,6 +26,11 @@ class DashboardController extends Controller
         $user = Auth::user();
         // SwitchBot系の取得処理
         $credentials = $this->userSwitchbotCredential->getCredentialsByUserId($user->id);
+
+        if (is_null($credentials)) {
+            return view('dashboard');
+        }
+
         // 登録チェック
         $registrationArray = $this->switchBotService->checkRegistration($credentials);
 
