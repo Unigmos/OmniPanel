@@ -3,6 +3,7 @@
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SettingController;
+use App\Http\Controllers\ToiletPaperController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,6 +32,11 @@ Route::middleware('auth')->group(function () {
         Route::get('/edit', [SettingController::class, 'edit'])->name('edit');
         Route::post('/update', [SettingController::class, 'update'])->name('update');
     });
+});
+
+// 未ログインで使用可能なツール
+Route::prefix('tools')->name('tools.')->group(function () {
+    Route::get('/toilet-paper', [ToiletPaperController::class, 'index'])->name('toilet_paper.index');
 });
 
 require __DIR__.'/auth.php';
