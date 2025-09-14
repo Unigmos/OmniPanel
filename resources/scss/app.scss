@@ -9,6 +9,7 @@ $overlay: rgba(0, 0, 0, 0.4);
 
 body {
     color: $black;
+    font-family: YuGothic, "Yu Gothic Medium", "Yu Gothic", Verdana, Meiryo, sans-serif;
 }
 
 .guest-container {
@@ -51,13 +52,34 @@ body {
     .guest-main-container {
         flex: 1;
         .margin-middle {
-            margin: 0 min(10vw, 50px);
+            margin: 20px min(10vw, 50px);
         }
         .tool-title {
             text-align: center;
             margin: 10px 0;
             font-weight: bold;
             letter-spacing: 0.05em;
+        }
+        .tool-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(clamp(200px, 50%, 400px), 1fr));
+            gap: 20px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 20px;
+            .tool-card {
+                background-color: $white;
+                border-radius: 5px;
+                .card-items {
+                    display: flex;
+                    padding: 20px;
+                    .card-icon {
+                        display: flex;
+                        align-items: center;
+                        font-size: calc(1.5rem + 2vw);
+                    }
+                }
+            }
         }
         .white-box {
             background-color: $white;
