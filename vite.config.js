@@ -9,6 +9,7 @@ export default defineConfig({
                 'resources/scss/app.scss',
                 'resources/js/app.js',
                 'resources/js/hamburger.js',
+                'resources/js/tools/toilet_paper.js',
             ],
             refresh: true,
         }),
